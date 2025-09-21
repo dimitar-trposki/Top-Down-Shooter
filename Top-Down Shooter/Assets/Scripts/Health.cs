@@ -20,14 +20,13 @@ public class Health : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
-        if (health == 10)
+        health -= amount;
+        scoreText.text = "Health: " + health + "%";
+        if (health == 0)
         {
             scoreText.text = "Health: " + 0 + "%";
             panel.SetActive(true);
             Time.timeScale = 0;
         }
-
-        health -= amount;
-        scoreText.text = "Health: " + health + "%";
     }
 }
